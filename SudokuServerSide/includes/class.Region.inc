@@ -29,8 +29,8 @@ class Region {
     public static function Hide(){
         global $gameArray;
         //$hiddenValues = [];
-        $regionAll = array(self::$region_1,self::$region_2,self::$region_3,self::$region_4,
-            self::$region_5,self::$region_6,self::$region_7,self::$region_8,self::$region_9);
+        $regionAll = array(static::$region_1,static::$region_2,static::$region_3,static::$region_4,
+            static::$region_5,static::$region_6,static::$region_7,static::$region_8,static::$region_9);
          
         
          for($i=0; $i < (count($regionAll));$i++){
@@ -42,7 +42,7 @@ class Region {
                 $hiddenValues[] = array_pop($arrayTemp);
              }             
          }
-        self::$hiddenValuesArray = $hiddenValues; 
+        static::$hiddenValuesArray = $hiddenValues; 
         for ($i=0;$i < count($hiddenValues); $i++ ){
             
             $gameArray[$hiddenValues[$i]]->_setIsHidden(TRUE); 
@@ -54,7 +54,7 @@ class Region {
      * @return bool
      */
     public static function _getHiddenVaulesArray(){
-        return self::$hiddenValuesArray;
+        return static::$hiddenValuesArray;
     }
 }
 

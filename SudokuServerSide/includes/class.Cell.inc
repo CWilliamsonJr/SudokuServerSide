@@ -44,11 +44,11 @@ class Cell {
         }        
     }
     public function _getCellArrayValues() { // gets the Value of the Cell
-        return self::$CellArrayValues[$this->cellID];        
+        return static::$CellArrayValues[$this->cellID];        
     } 
         
     private function _setCellArrayValues() { // sets the value of the cell
-        self::$CellArrayValues [] = $this->cellValue;
+        static::$CellArrayValues [] = $this->cellValue;
         
     }
 
